@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="858384961af146269dd2c76fa51ddfe6" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="LibraryStoreModel.BanSach" Width="1.5" PointX="4.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryStoreModel.BookReservation" Width="1.5" PointX="6.375" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryStoreModel.Book" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryStoreModel.Contact" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryStoreModel.LichSuMuon" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryStoreModel.MuonSach" Width="1.5" PointX="1.875" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryStoreModel.NguoiDoc" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryStoreModel.NhanVien" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryStoreModel.Order" Width="1.5" PointX="8" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryStoreModel.sysdiagram" Width="1.5" PointX="5.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryStoreModel.UserLogin" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="LibraryStoreModel.FK__BanSach__IdSach__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryStoreModel.FK__BookReser__IdNgu__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryStoreModel.FK__BookReser__IdSac__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryStoreModel.FK__LichSuMuo__IdSac__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryStoreModel.FK__MuonSach__IdMuon__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryStoreModel.FK__LichSuMuo__IdNgu__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryStoreModel.FK__MuonSach__IdNguo__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryStoreModel.FK__Orders__IdNguoiD__5FB337D6" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

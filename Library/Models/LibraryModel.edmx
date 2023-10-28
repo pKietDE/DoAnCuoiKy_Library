@@ -1,0 +1,708 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LibraryStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BanSach">
+          <Key>
+            <PropertyRef Name="IdSachBan" />
+          </Key>
+          <Property Name="IdSachBan" Type="int" Nullable="false" />
+          <Property Name="IdSach" Type="int" />
+          <Property Name="NgayBan" Type="date" />
+          <Property Name="SoLuongBan" Type="int" />
+          <Property Name="GiaTien" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="TongTien" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="TenKhachHang" Type="varchar" MaxLength="255" />
+          <Property Name="EmailKhachHang" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="BookReservations">
+          <Key>
+            <PropertyRef Name="ReservationID" />
+          </Key>
+          <Property Name="ReservationID" Type="int" Nullable="false" />
+          <Property Name="IdNguoiDoc" Type="int" />
+          <Property Name="IdSach" Type="int" />
+          <Property Name="ReservationDate" Type="date" />
+          <Property Name="ReceiveDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Books">
+          <Key>
+            <PropertyRef Name="IdSach" />
+          </Key>
+          <Property Name="IdSach" Type="int" Nullable="false" />
+          <Property Name="TenSach" Type="varchar" MaxLength="255" />
+          <Property Name="TacGia" Type="varchar" MaxLength="255" />
+          <Property Name="NamXuatban" Type="int" />
+          <Property Name="TheLoai" Type="varchar" MaxLength="50" />
+          <Property Name="SoLuong" Type="int" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="IdLienHe" />
+          </Key>
+          <Property Name="IdLienHe" Type="int" Nullable="false" />
+          <Property Name="Ten" Type="varchar" MaxLength="255" />
+          <Property Name="Email" Type="varchar" MaxLength="255" />
+          <Property Name="Phone" Type="varchar" MaxLength="15" />
+          <Property Name="NhanXet" Type="text" />
+          <Property Name="ContactDate" Type="date" />
+        </EntityType>
+        <EntityType Name="LichSuMuon">
+          <Key>
+            <PropertyRef Name="IdLichSu" />
+          </Key>
+          <Property Name="IdLichSu" Type="int" Nullable="false" />
+          <Property Name="IdNguoiDoc" Type="int" />
+          <Property Name="IdSach" Type="int" />
+          <Property Name="NgayMuon" Type="date" />
+          <Property Name="NgayTra" Type="date" />
+          <Property Name="Status" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="MuonSach">
+          <Key>
+            <PropertyRef Name="IdMuonSach" />
+          </Key>
+          <Property Name="IdMuonSach" Type="int" Nullable="false" />
+          <Property Name="IdNguoiDoc" Type="int" />
+          <Property Name="IdSach" Type="int" />
+          <Property Name="NgayMuon" Type="date" />
+          <Property Name="NgayTra" Type="date" />
+          <Property Name="Status" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="NguoiDoc">
+          <Key>
+            <PropertyRef Name="IdNguoiDoc" />
+          </Key>
+          <Property Name="IdNguoiDoc" Type="int" Nullable="false" />
+          <Property Name="HoVaTen" Type="varchar" MaxLength="255" />
+          <Property Name="DiaChi" Type="varchar" MaxLength="255" />
+          <Property Name="SoDienThoai" Type="varchar" MaxLength="15" />
+          <Property Name="Email" Type="varchar" MaxLength="255" />
+          <Property Name="NgayDangKy" Type="date" />
+        </EntityType>
+        <EntityType Name="NhanVien">
+          <Key>
+            <PropertyRef Name="IdNhanvien" />
+          </Key>
+          <Property Name="IdNhanvien" Type="int" Nullable="false" />
+          <Property Name="HoVaTen" Type="varchar" MaxLength="255" />
+          <Property Name="Luong" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="NgayBatDaulam" Type="date" />
+          <Property Name="SoDienThoai" Type="varchar" MaxLength="15" />
+          <Property Name="Email" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="IdNguoiDung" Type="int" />
+          <Property Name="OrderDate" Type="date" />
+          <Property Name="TotalAmount" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="UserLogin">
+          <Key>
+            <PropertyRef Name="IdNguoiDung" />
+          </Key>
+          <Property Name="IdNguoiDung" Type="int" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="255" />
+          <Property Name="HoVaTen" Type="varchar" MaxLength="255" />
+          <Property Name="Email" Type="varchar" MaxLength="255" />
+          <Property Name="UserRole" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__BanSach__IdSach__48CFD27E">
+          <End Role="Books" Type="Self.Books" Multiplicity="0..1" />
+          <End Role="BanSach" Type="Self.BanSach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Books">
+              <PropertyRef Name="IdSach" />
+            </Principal>
+            <Dependent Role="BanSach">
+              <PropertyRef Name="IdSach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BookReser__IdNgu__412EB0B6">
+          <End Role="NguoiDoc" Type="Self.NguoiDoc" Multiplicity="0..1" />
+          <End Role="BookReservations" Type="Self.BookReservations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDoc">
+              <PropertyRef Name="IdNguoiDoc" />
+            </Principal>
+            <Dependent Role="BookReservations">
+              <PropertyRef Name="IdNguoiDoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BookReser__IdSac__4222D4EF">
+          <End Role="Books" Type="Self.Books" Multiplicity="0..1" />
+          <End Role="BookReservations" Type="Self.BookReservations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Books">
+              <PropertyRef Name="IdSach" />
+            </Principal>
+            <Dependent Role="BookReservations">
+              <PropertyRef Name="IdSach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LichSuMuo__IdNgu__44FF419A">
+          <End Role="NguoiDoc" Type="Self.NguoiDoc" Multiplicity="0..1" />
+          <End Role="LichSuMuon" Type="Self.LichSuMuon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDoc">
+              <PropertyRef Name="IdNguoiDoc" />
+            </Principal>
+            <Dependent Role="LichSuMuon">
+              <PropertyRef Name="IdNguoiDoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LichSuMuo__IdSac__45F365D3">
+          <End Role="Books" Type="Self.Books" Multiplicity="0..1" />
+          <End Role="LichSuMuon" Type="Self.LichSuMuon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Books">
+              <PropertyRef Name="IdSach" />
+            </Principal>
+            <Dependent Role="LichSuMuon">
+              <PropertyRef Name="IdSach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MuonSach__IdMuon__3C69FB99">
+          <End Role="Books" Type="Self.Books" Multiplicity="1" />
+          <End Role="MuonSach" Type="Self.MuonSach" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Books">
+              <PropertyRef Name="IdSach" />
+            </Principal>
+            <Dependent Role="MuonSach">
+              <PropertyRef Name="IdMuonSach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MuonSach__IdNguo__3B75D760">
+          <End Role="NguoiDoc" Type="Self.NguoiDoc" Multiplicity="0..1" />
+          <End Role="MuonSach" Type="Self.MuonSach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDoc">
+              <PropertyRef Name="IdNguoiDoc" />
+            </Principal>
+            <Dependent Role="MuonSach">
+              <PropertyRef Name="IdNguoiDoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__IdNguoiD__5FB337D6">
+          <End Role="UserLogin" Type="Self.UserLogin" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserLogin">
+              <PropertyRef Name="IdNguoiDung" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="IdNguoiDung" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LibraryStoreModelStoreContainer">
+          <EntitySet Name="BanSach" EntityType="Self.BanSach" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BookReservations" EntityType="Self.BookReservations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LichSuMuon" EntityType="Self.LichSuMuon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MuonSach" EntityType="Self.MuonSach" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NguoiDoc" EntityType="Self.NguoiDoc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserLogin" EntityType="Self.UserLogin" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__BanSach__IdSach__48CFD27E" Association="Self.FK__BanSach__IdSach__48CFD27E">
+            <End Role="Books" EntitySet="Books" />
+            <End Role="BanSach" EntitySet="BanSach" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BookReser__IdNgu__412EB0B6" Association="Self.FK__BookReser__IdNgu__412EB0B6">
+            <End Role="NguoiDoc" EntitySet="NguoiDoc" />
+            <End Role="BookReservations" EntitySet="BookReservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BookReser__IdSac__4222D4EF" Association="Self.FK__BookReser__IdSac__4222D4EF">
+            <End Role="Books" EntitySet="Books" />
+            <End Role="BookReservations" EntitySet="BookReservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LichSuMuo__IdNgu__44FF419A" Association="Self.FK__LichSuMuo__IdNgu__44FF419A">
+            <End Role="NguoiDoc" EntitySet="NguoiDoc" />
+            <End Role="LichSuMuon" EntitySet="LichSuMuon" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LichSuMuo__IdSac__45F365D3" Association="Self.FK__LichSuMuo__IdSac__45F365D3">
+            <End Role="Books" EntitySet="Books" />
+            <End Role="LichSuMuon" EntitySet="LichSuMuon" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MuonSach__IdMuon__3C69FB99" Association="Self.FK__MuonSach__IdMuon__3C69FB99">
+            <End Role="Books" EntitySet="Books" />
+            <End Role="MuonSach" EntitySet="MuonSach" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MuonSach__IdNguo__3B75D760" Association="Self.FK__MuonSach__IdNguo__3B75D760">
+            <End Role="NguoiDoc" EntitySet="NguoiDoc" />
+            <End Role="MuonSach" EntitySet="MuonSach" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__IdNguoiD__5FB337D6" Association="Self.FK__Orders__IdNguoiD__5FB337D6">
+            <End Role="UserLogin" EntitySet="UserLogin" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LibraryStoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BanSach">
+          <Key>
+            <PropertyRef Name="IdSachBan" />
+          </Key>
+          <Property Name="IdSachBan" Type="Int32" Nullable="false" />
+          <Property Name="IdSach" Type="Int32" />
+          <Property Name="NgayBan" Type="DateTime" Precision="0" />
+          <Property Name="SoLuongBan" Type="Int32" />
+          <Property Name="GiaTien" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="TongTien" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="TenKhachHang" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="EmailKhachHang" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Book" Relationship="Self.FK__BanSach__IdSach__48CFD27E" FromRole="BanSach" ToRole="Books" />
+        </EntityType>
+        <EntityType Name="BookReservation">
+          <Key>
+            <PropertyRef Name="ReservationID" />
+          </Key>
+          <Property Name="ReservationID" Type="Int32" Nullable="false" />
+          <Property Name="IdNguoiDoc" Type="Int32" />
+          <Property Name="IdSach" Type="Int32" />
+          <Property Name="ReservationDate" Type="DateTime" Precision="0" />
+          <Property Name="ReceiveDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="NguoiDoc" Relationship="Self.FK__BookReser__IdNgu__412EB0B6" FromRole="BookReservations" ToRole="NguoiDoc" />
+          <NavigationProperty Name="Book" Relationship="Self.FK__BookReser__IdSac__4222D4EF" FromRole="BookReservations" ToRole="Books" />
+        </EntityType>
+        <EntityType Name="Book">
+          <Key>
+            <PropertyRef Name="IdSach" />
+          </Key>
+          <Property Name="IdSach" Type="Int32" Nullable="false" />
+          <Property Name="TenSach" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TacGia" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NamXuatban" Type="Int32" />
+          <Property Name="TheLoai" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SoLuong" Type="Int32" />
+          <NavigationProperty Name="BanSaches" Relationship="Self.FK__BanSach__IdSach__48CFD27E" FromRole="Books" ToRole="BanSach" />
+          <NavigationProperty Name="BookReservations" Relationship="Self.FK__BookReser__IdSac__4222D4EF" FromRole="Books" ToRole="BookReservations" />
+          <NavigationProperty Name="LichSuMuons" Relationship="Self.FK__LichSuMuo__IdSac__45F365D3" FromRole="Books" ToRole="LichSuMuon" />
+          <NavigationProperty Name="MuonSach" Relationship="Self.FK__MuonSach__IdMuon__3C69FB99" FromRole="Books" ToRole="MuonSach" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="IdLienHe" />
+          </Key>
+          <Property Name="IdLienHe" Type="Int32" Nullable="false" />
+          <Property Name="Ten" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="NhanXet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ContactDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="LichSuMuon">
+          <Key>
+            <PropertyRef Name="IdLichSu" />
+          </Key>
+          <Property Name="IdLichSu" Type="Int32" Nullable="false" />
+          <Property Name="IdNguoiDoc" Type="Int32" />
+          <Property Name="IdSach" Type="Int32" />
+          <Property Name="NgayMuon" Type="DateTime" Precision="0" />
+          <Property Name="NgayTra" Type="DateTime" Precision="0" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Book" Relationship="Self.FK__LichSuMuo__IdSac__45F365D3" FromRole="LichSuMuon" ToRole="Books" />
+          <NavigationProperty Name="NguoiDoc" Relationship="Self.FK__LichSuMuo__IdNgu__44FF419A" FromRole="LichSuMuon" ToRole="NguoiDoc" />
+        </EntityType>
+        <EntityType Name="MuonSach">
+          <Key>
+            <PropertyRef Name="IdMuonSach" />
+          </Key>
+          <Property Name="IdMuonSach" Type="Int32" Nullable="false" />
+          <Property Name="IdNguoiDoc" Type="Int32" />
+          <Property Name="IdSach" Type="Int32" />
+          <Property Name="NgayMuon" Type="DateTime" Precision="0" />
+          <Property Name="NgayTra" Type="DateTime" Precision="0" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Book" Relationship="Self.FK__MuonSach__IdMuon__3C69FB99" FromRole="MuonSach" ToRole="Books" />
+          <NavigationProperty Name="NguoiDoc" Relationship="Self.FK__MuonSach__IdNguo__3B75D760" FromRole="MuonSach" ToRole="NguoiDoc" />
+        </EntityType>
+        <EntityType Name="NguoiDoc">
+          <Key>
+            <PropertyRef Name="IdNguoiDoc" />
+          </Key>
+          <Property Name="IdNguoiDoc" Type="Int32" Nullable="false" />
+          <Property Name="HoVaTen" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DiaChi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SoDienThoai" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NgayDangKy" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="BookReservations" Relationship="Self.FK__BookReser__IdNgu__412EB0B6" FromRole="NguoiDoc" ToRole="BookReservations" />
+          <NavigationProperty Name="LichSuMuons" Relationship="Self.FK__LichSuMuo__IdNgu__44FF419A" FromRole="NguoiDoc" ToRole="LichSuMuon" />
+          <NavigationProperty Name="MuonSaches" Relationship="Self.FK__MuonSach__IdNguo__3B75D760" FromRole="NguoiDoc" ToRole="MuonSach" />
+        </EntityType>
+        <EntityType Name="NhanVien">
+          <Key>
+            <PropertyRef Name="IdNhanvien" />
+          </Key>
+          <Property Name="IdNhanvien" Type="Int32" Nullable="false" />
+          <Property Name="HoVaTen" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Luong" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="NgayBatDaulam" Type="DateTime" Precision="0" />
+          <Property Name="SoDienThoai" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="IdNguoiDung" Type="Int32" />
+          <Property Name="OrderDate" Type="DateTime" Precision="0" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="UserLogin" Relationship="Self.FK__Orders__IdNguoiD__5FB337D6" FromRole="Orders" ToRole="UserLogin" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="UserLogin">
+          <Key>
+            <PropertyRef Name="IdNguoiDung" />
+          </Key>
+          <Property Name="IdNguoiDung" Type="Int32" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="HoVaTen" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="UserRole" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__IdNguoiD__5FB337D6" FromRole="UserLogin" ToRole="Orders" />
+        </EntityType>
+        <Association Name="FK__BanSach__IdSach__48CFD27E">
+          <End Role="Books" Type="Self.Book" Multiplicity="0..1" />
+          <End Role="BanSach" Type="Self.BanSach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Books">
+              <PropertyRef Name="IdSach" />
+            </Principal>
+            <Dependent Role="BanSach">
+              <PropertyRef Name="IdSach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BookReser__IdNgu__412EB0B6">
+          <End Role="NguoiDoc" Type="Self.NguoiDoc" Multiplicity="0..1" />
+          <End Role="BookReservations" Type="Self.BookReservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDoc">
+              <PropertyRef Name="IdNguoiDoc" />
+            </Principal>
+            <Dependent Role="BookReservations">
+              <PropertyRef Name="IdNguoiDoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__BookReser__IdSac__4222D4EF">
+          <End Role="Books" Type="Self.Book" Multiplicity="0..1" />
+          <End Role="BookReservations" Type="Self.BookReservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Books">
+              <PropertyRef Name="IdSach" />
+            </Principal>
+            <Dependent Role="BookReservations">
+              <PropertyRef Name="IdSach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LichSuMuo__IdSac__45F365D3">
+          <End Role="Books" Type="Self.Book" Multiplicity="0..1" />
+          <End Role="LichSuMuon" Type="Self.LichSuMuon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Books">
+              <PropertyRef Name="IdSach" />
+            </Principal>
+            <Dependent Role="LichSuMuon">
+              <PropertyRef Name="IdSach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MuonSach__IdMuon__3C69FB99">
+          <End Role="Books" Type="Self.Book" Multiplicity="1" />
+          <End Role="MuonSach" Type="Self.MuonSach" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Books">
+              <PropertyRef Name="IdSach" />
+            </Principal>
+            <Dependent Role="MuonSach">
+              <PropertyRef Name="IdMuonSach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LichSuMuo__IdNgu__44FF419A">
+          <End Role="NguoiDoc" Type="Self.NguoiDoc" Multiplicity="0..1" />
+          <End Role="LichSuMuon" Type="Self.LichSuMuon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDoc">
+              <PropertyRef Name="IdNguoiDoc" />
+            </Principal>
+            <Dependent Role="LichSuMuon">
+              <PropertyRef Name="IdNguoiDoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MuonSach__IdNguo__3B75D760">
+          <End Role="NguoiDoc" Type="Self.NguoiDoc" Multiplicity="0..1" />
+          <End Role="MuonSach" Type="Self.MuonSach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDoc">
+              <PropertyRef Name="IdNguoiDoc" />
+            </Principal>
+            <Dependent Role="MuonSach">
+              <PropertyRef Name="IdNguoiDoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__IdNguoiD__5FB337D6">
+          <End Role="UserLogin" Type="Self.UserLogin" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserLogin">
+              <PropertyRef Name="IdNguoiDung" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="IdNguoiDung" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LibraryStoreEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BanSaches" EntityType="Self.BanSach" />
+          <EntitySet Name="BookReservations" EntityType="Self.BookReservation" />
+          <EntitySet Name="Books" EntityType="Self.Book" />
+          <EntitySet Name="Contacts" EntityType="Self.Contact" />
+          <EntitySet Name="LichSuMuons" EntityType="Self.LichSuMuon" />
+          <EntitySet Name="MuonSaches" EntityType="Self.MuonSach" />
+          <EntitySet Name="NguoiDocs" EntityType="Self.NguoiDoc" />
+          <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="UserLogins" EntityType="Self.UserLogin" />
+          <AssociationSet Name="FK__BanSach__IdSach__48CFD27E" Association="Self.FK__BanSach__IdSach__48CFD27E">
+            <End Role="Books" EntitySet="Books" />
+            <End Role="BanSach" EntitySet="BanSaches" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BookReser__IdNgu__412EB0B6" Association="Self.FK__BookReser__IdNgu__412EB0B6">
+            <End Role="NguoiDoc" EntitySet="NguoiDocs" />
+            <End Role="BookReservations" EntitySet="BookReservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__BookReser__IdSac__4222D4EF" Association="Self.FK__BookReser__IdSac__4222D4EF">
+            <End Role="Books" EntitySet="Books" />
+            <End Role="BookReservations" EntitySet="BookReservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LichSuMuo__IdSac__45F365D3" Association="Self.FK__LichSuMuo__IdSac__45F365D3">
+            <End Role="Books" EntitySet="Books" />
+            <End Role="LichSuMuon" EntitySet="LichSuMuons" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MuonSach__IdMuon__3C69FB99" Association="Self.FK__MuonSach__IdMuon__3C69FB99">
+            <End Role="Books" EntitySet="Books" />
+            <End Role="MuonSach" EntitySet="MuonSaches" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LichSuMuo__IdNgu__44FF419A" Association="Self.FK__LichSuMuo__IdNgu__44FF419A">
+            <End Role="NguoiDoc" EntitySet="NguoiDocs" />
+            <End Role="LichSuMuon" EntitySet="LichSuMuons" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MuonSach__IdNguo__3B75D760" Association="Self.FK__MuonSach__IdNguo__3B75D760">
+            <End Role="NguoiDoc" EntitySet="NguoiDocs" />
+            <End Role="MuonSach" EntitySet="MuonSaches" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__IdNguoiD__5FB337D6" Association="Self.FK__Orders__IdNguoiD__5FB337D6">
+            <End Role="UserLogin" EntitySet="UserLogins" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LibraryStoreModelStoreContainer" CdmEntityContainer="LibraryStoreEntities">
+          <EntitySetMapping Name="BanSaches">
+            <EntityTypeMapping TypeName="LibraryStoreModel.BanSach">
+              <MappingFragment StoreEntitySet="BanSach">
+                <ScalarProperty Name="IdSachBan" ColumnName="IdSachBan" />
+                <ScalarProperty Name="IdSach" ColumnName="IdSach" />
+                <ScalarProperty Name="NgayBan" ColumnName="NgayBan" />
+                <ScalarProperty Name="SoLuongBan" ColumnName="SoLuongBan" />
+                <ScalarProperty Name="GiaTien" ColumnName="GiaTien" />
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+                <ScalarProperty Name="TenKhachHang" ColumnName="TenKhachHang" />
+                <ScalarProperty Name="EmailKhachHang" ColumnName="EmailKhachHang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BookReservations">
+            <EntityTypeMapping TypeName="LibraryStoreModel.BookReservation">
+              <MappingFragment StoreEntitySet="BookReservations">
+                <ScalarProperty Name="ReservationID" ColumnName="ReservationID" />
+                <ScalarProperty Name="IdNguoiDoc" ColumnName="IdNguoiDoc" />
+                <ScalarProperty Name="IdSach" ColumnName="IdSach" />
+                <ScalarProperty Name="ReservationDate" ColumnName="ReservationDate" />
+                <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Books">
+            <EntityTypeMapping TypeName="LibraryStoreModel.Book">
+              <MappingFragment StoreEntitySet="Books">
+                <ScalarProperty Name="IdSach" ColumnName="IdSach" />
+                <ScalarProperty Name="TenSach" ColumnName="TenSach" />
+                <ScalarProperty Name="TacGia" ColumnName="TacGia" />
+                <ScalarProperty Name="NamXuatban" ColumnName="NamXuatban" />
+                <ScalarProperty Name="TheLoai" ColumnName="TheLoai" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="LibraryStoreModel.Contact">
+              <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="IdLienHe" ColumnName="IdLienHe" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="NhanXet" ColumnName="NhanXet" />
+                <ScalarProperty Name="ContactDate" ColumnName="ContactDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LichSuMuons">
+            <EntityTypeMapping TypeName="LibraryStoreModel.LichSuMuon">
+              <MappingFragment StoreEntitySet="LichSuMuon">
+                <ScalarProperty Name="IdLichSu" ColumnName="IdLichSu" />
+                <ScalarProperty Name="IdNguoiDoc" ColumnName="IdNguoiDoc" />
+                <ScalarProperty Name="IdSach" ColumnName="IdSach" />
+                <ScalarProperty Name="NgayMuon" ColumnName="NgayMuon" />
+                <ScalarProperty Name="NgayTra" ColumnName="NgayTra" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MuonSaches">
+            <EntityTypeMapping TypeName="LibraryStoreModel.MuonSach">
+              <MappingFragment StoreEntitySet="MuonSach">
+                <ScalarProperty Name="IdMuonSach" ColumnName="IdMuonSach" />
+                <ScalarProperty Name="IdNguoiDoc" ColumnName="IdNguoiDoc" />
+                <ScalarProperty Name="IdSach" ColumnName="IdSach" />
+                <ScalarProperty Name="NgayMuon" ColumnName="NgayMuon" />
+                <ScalarProperty Name="NgayTra" ColumnName="NgayTra" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NguoiDocs">
+            <EntityTypeMapping TypeName="LibraryStoreModel.NguoiDoc">
+              <MappingFragment StoreEntitySet="NguoiDoc">
+                <ScalarProperty Name="IdNguoiDoc" ColumnName="IdNguoiDoc" />
+                <ScalarProperty Name="HoVaTen" ColumnName="HoVaTen" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NgayDangKy" ColumnName="NgayDangKy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NhanViens">
+            <EntityTypeMapping TypeName="LibraryStoreModel.NhanVien">
+              <MappingFragment StoreEntitySet="NhanVien">
+                <ScalarProperty Name="IdNhanvien" ColumnName="IdNhanvien" />
+                <ScalarProperty Name="HoVaTen" ColumnName="HoVaTen" />
+                <ScalarProperty Name="Luong" ColumnName="Luong" />
+                <ScalarProperty Name="NgayBatDaulam" ColumnName="NgayBatDaulam" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="LibraryStoreModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="IdNguoiDung" ColumnName="IdNguoiDung" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="LibraryStoreModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserLogins">
+            <EntityTypeMapping TypeName="LibraryStoreModel.UserLogin">
+              <MappingFragment StoreEntitySet="UserLogin">
+                <ScalarProperty Name="IdNguoiDung" ColumnName="IdNguoiDung" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="HoVaTen" ColumnName="HoVaTen" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserRole" ColumnName="UserRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

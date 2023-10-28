@@ -1,0 +1,360 @@
+﻿
+@{
+    ViewBag.Title = "Shop";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>InforMation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/Content/ShopCS.css" />
+</head>
+<body>
+
+    <section>
+        <div class="grid-4">
+
+            <div class=" bg-ccc">
+                <h4>
+                    <i class="fa-solid fa-check" style="color: #d5e40c;"></i>
+
+                    Quality Product
+                </h4>
+            </div>
+            <div class=" bg-ccc">
+                <h4>
+                    <i class="fa-solid fa-truck-fast" style="color: #d5e40c;"></i>
+                    Free Shipping
+                </h4>
+            </div>
+            <div class=" bg-ccc">
+                <h4>
+                    <i class="fa-solid fa-arrow-right-arrow-left" style="color: #d5e40c;"></i>
+                    14-Day-Return
+                </h4>
+            </div>
+
+            <div class=" bg-ccc">
+                <h4>
+                    <i class="fa-solid fa-phone-volume fa-shake" style="color: #d5e40c;"></i>
+
+                    24/7 Support
+                </h4>
+            </div>
+        </div>
+    </section>
+    <section style="min-height:80vh;">
+        <div id="showgiohang" class="showgiohang" style="min-height: 500px; top: 12%; right: 0; position: fixed; width: 40%;">
+            <table  style="margin-right: 50px;">
+                <tr>
+                    <td>STT &nbsp;</td>
+                    <td>Sản Phẩm  &nbsp; &nbsp;&nbsp; &nbsp;</td>
+                    <td>Đơn Giá  &nbsp; &nbsp;&nbsp; &nbsp;</td>
+                    <td>Số Lượng  &nbsp; &nbsp;&nbsp; &nbsp;</td>
+                    <td>Thành Tiền &nbsp; &nbsp;&nbsp; &nbsp;</td>
+                    <td>Xóa &nbsp; &nbsp;&nbsp; &nbsp;</td>
+                </tr>
+                <tbody id="giohangchitiet" class="giohangchitiet" style="height: auto; position: fixed;color:red;white-space:pre-line;">
+                    <tr >
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <h3>Sách Hay</h3>
+        <div class="list-grid">
+            <div class="item">
+                <img src="~/image/bia-1_dan-ba-cu-yeu-di-dung-ngai.jpg" name="Hinh" />
+                <a href="" name="Ten">Đàn bà ,Cứ yêu đi ,Đừng ngại</a>
+                <p>Giá :<span name="DonGia"> 59.400</span></p>
+
+                <input type="number" name="SoLuong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                <button onclick="addtocart(this)">Add</button>
+
+            </div>
+            <div class="item">
+                <img src="~/image/tdcsvnsh.jpg" />
+                <a href="#">Thay Đổi Cuộc Sống Với Nhân Số Học</a>
+                <p>Giá :<span>148.800</span></p>
+                <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                <button onclick="addtocart(this)">Add</button>
+
+            </div>
+            <div class="item">
+                <img src="~/image/image_239651.jpg" />
+                <a href="#">Tuổi Trẻ Đáng Giá Bao Nhiêu</a>
+                <p>Giá :<span>54.000</span></p>
+                <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                <button onclick="addtocart(this)">Add</button>
+
+            </div>
+
+        </div>
+        <input type="checkbox" id="read-more-checkbox">
+        <div class="content">
+
+            <div class="list-grid ">
+                <div class="item">
+                    <img src="~/image/imgnicebook/trainghiem.jpg" />
+                    <a href="">Trải Nghiệm Khách Hàng Xuất Sắc</a>
+                    <p>Giá :<span> 150.400</span></p>
+
+                    <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                    <button onclick="addtocart(this)">Add</button>
+
+                </div>
+                <div class="item">
+                    <img src="~/image/imgnicebook/songdoi.jpg" />
+                    <a href="#">Sống Đời Bình An</a>
+                    <p>Giá :<span>66.800</span></p>
+                    <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                    <button onclick="addtocart(this)">Add</button>
+
+                </div>
+                <div class="item">
+                    <img src="~/image/imgnicebook/thatroi.jpg" />
+                    <a href="#">Thả Trôi Phiền Muộn</a>
+                    <p>Giá :<span>66.000</span></p>
+                    <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                    <button onclick="addtocart(this)">Add</button>
+
+                </div>
+                <div class="item">
+                    <img src="~/image/imgnicebook/thietke.jpg" />
+                    <a href="">Thiết Kế Sự Nghiệp Cá Nhân</a>
+                    <p>Giá :<span> 120.400</span></p>
+
+                    <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                    <button onclick="addtocart(this)">Add</button>
+
+                </div>
+                <div class="item">
+                    <img src="~/image/imgnicebook/thiensuvaembe.jpg" />
+                    <a href="#">Thiên Sứ Và Em Bé 5 Tuổi</a>
+                    <p>Giá :<span>96.800</span></p>
+                    <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                    <button onclick="addtocart(this)">Add</button>
+
+                </div>
+                <div class="item">
+                    <img src="~/image/imgnicebook/lammoi.jpg" />
+                    <a href="#">Làm Mới Vườn Tâm </a>
+                    <p>Giá :<span>99.000</span></p>
+                    <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                    <button onclick="addtocart(this)">Add</button>
+
+                </div>
+
+            </div>
+
+        </div>
+        <label style="margin:0 auto;" for="read-more-checkbox" class="less-more">less More</label>
+
+        <label style="margin:0 auto;" for="read-more-checkbox" class="read-more">Read More</label>
+
+
+
+    </section>
+    <section>
+        <h3>Sách Dành Cho Trẻ Em</h3>
+        <div class="list-grid">
+            <div class="item">
+                <img src="~/image/Imgchildren/9786043584622_1.jpg" />
+                <a href="">Giáo Dục Phát Triển Kĩ Năng Xã Hội</a>
+                <p>Giá :<span> 8.500</span></p>
+
+                <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                <button onclick="addtocart(this)">Add</button>
+
+            </div>
+            <div class="item">
+                <img src="~/image/Imgchildren/image_238123.jpg" />
+                <a href="#">Giáo Dục An Toàn Giao Thông</a>
+                <p>Giá :<span>7.500</span></p>
+                <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                <button onclick="addtocart(this)">Add</button>
+
+            </div>
+            <div class="item">
+                <img src="~/image/Imgchildren/8935210307989.jpg" />
+                <a href="#">Bút Chấm Đọc Học Tiếng Anh</a>
+                <p>Giá :<span>54.000</span></p>
+                <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                <button onclick="addtocart(this)">Add</button>
+
+            </div>
+
+        </div>
+        <input type="checkbox" id="read-more-checkbox2">
+        <div class="content">
+
+            <div class="list-grid ">
+                <div class="item">
+                    <img src="~/image/Imgchildren/ox.jpg" />
+                    <a href="">Oxford Learnner's PocKet</a>
+                    <p>Giá :<span> 76.500</span></p>
+
+                    <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                    <button onclick="addtocart(this)">Add</button>
+
+                </div>
+                <div class="item">
+                    <img src="~/image/Imgchildren/9780241562284.jpg" />
+                    <a href="#">Diary Of A Wimpy Kid</a>
+                    <p>Giá :<span>143.200</span></p>
+                    <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                    <button onclick="addtocart(this)">Add</button>
+
+                </div>
+                <div class="item">
+                    <img src="~/image/Imgchildren/songngu.jpg" />
+                    <a href="#">Bộ Sách Truyện Tranh Song Ngữ</a>
+                    <p>Giá :<span>90.000</span></p>
+                    <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                    <button onclick="addtocart(this)">Add</button>
+
+                </div>
+                <div class="item">
+                    <img src="~/image/Imgchildren/demen.jpg" />
+                    <a href="">Dế Mèn Phiêu Lưu Ký</a>
+                    <p>Giá :<span> 50.400</span></p>
+
+                    <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                    <button onclick="addtocart(this)">Add</button>
+
+                </div>
+                <div class="item">
+                    <img src="~/image/Imgchildren/gaucontinhnghich.jpg" />
+                    <a href="#">Bộ Sách Gấu Con Tinh Nghịch </a>
+                    <p>Giá :<span>292.800</span></p>
+                    <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                    <button onclick="addtocart(this)">Add</button>
+
+                </div>
+                <div class="item">
+                    <img src="~/image/Imgchildren/luyeniq.jpg" />
+                    <a href="#">Bộ Sách Rèn Luyên IQ</a>
+                    <p>Giá :<span>54.000</span></p>
+                    <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                    <button onclick="addtocart(this)">Add</button>
+
+                </div>
+
+            </div>
+
+        </div>
+        <label style="margin:0 auto;" for="read-more-checkbox2" class="less-more">less More</label>
+
+        <label style="margin:0 auto;" for="read-more-checkbox2" class="read-more">Read More</label>
+    </section>
+    <section>
+        <h3>Sách Hay</h3>
+        <div class="list-grid">
+            <div class="item">
+                <img src="~/image/bia-1_dan-ba-cu-yeu-di-dung-ngai.jpg" />
+                <a href="">Đàn bà ,Cứ yêui ,Đừng ngại</a>
+                <p>Giá :<span> 59.400</span></p>
+
+                <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                <button onclick="addtocart(this)">Add</button>
+
+            </div>
+            <div class="item">
+                <img src="~/image/tdcsvnsh.jpg" />
+                <a href="#">Thay Đổi Cuộc Sống Với Nhân Số Học</a>
+                <p>Giá :<span>148.800</span></p>
+                <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                <button onclick="addtocart(this)">Add</button>
+
+            </div>
+            <div class="item">
+                <img src="~/image/image_239651.jpg" />
+                <a href="#">Tuổi Trẻ Đáng Giá Bao Nhiêu</a>
+                <p>Giá :<span>54.000</span></p>
+                <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                <button onclick="addtocart(this)">Add</button>
+
+            </div>
+
+        </div>
+        <input type="checkbox" id="read-more-checkbox3">
+        <div class="content">
+
+            <div class="list-grid ">
+                <div class="item">
+                    <img src="~/image/bia-1_dan-ba-cu-yeu-di-dung-ngai.jpg" />
+                    <a href="">Đàn bà ,Cứ yêui ,Đừng ngại</a>
+                    <p>Giá :<span> 59.400</span></p>
+
+                    <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                    <button onclick="addtocart(this)">Add</button>
+
+                </div>
+                <div class="item">
+                    <img src="~/image/tdcsvnsh.jpg" />
+                    <a href="#">Thay Đổi Cuộc Sống Với Nhân Số Học</a>
+                    <p>Giá :<span>148.800</span></p>
+                    <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                    <button onclick="addtocart(this)">Add</button>
+
+                </div>
+                <div class="item">
+                    <img src="~/image/image_239651.jpg" />
+                    <a href="#">Tuổi Trẻ Đáng Giá Bao Nhiêu</a>
+                    <p>Giá :<span>54.000</span></p>
+                    <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                    <button onclick="addtocart(this)">Add</button>
+
+                </div>
+                <div class="item">
+                    <img src="~/image/bia-1_dan-ba-cu-yeu-di-dung-ngai.jpg" />
+                    <a href="">Đàn bà ,Cứ yêui ,Đừng ngại</a>
+                    <p>Giá :<span> 59.400</span></p>
+
+                    <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                    <button onclick="addtocart(this)">Add</button>
+
+                </div>
+                <div class="item">
+                    <img src="~/image/tdcsvnsh.jpg" />
+                    <a href="#">Thay Đổi Cuộc Sống Với Nhân Số Học</a>
+                    <p>Giá :<span>148.800</span></p>
+                    <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                    <button onclick="addtocart(this)">Add</button>
+
+                </div>
+                <div class="item">
+                    <img src="~/image/image_239651.jpg" />
+                    <a href="#">Tuổi Trẻ Đáng Giá Bao Nhiêu</a>
+                    <p>Giá :<span>54.000</span></p>
+                    <input type="number" name="soluong" id="soluong" placeholder="Nhập Số Lượng" value="1" />
+                    <button onclick="addtocart(this)">Add</button>
+
+                </div>
+
+            </div>
+
+        </div>
+        <label style="margin:0 auto;" for="read-more-checkbox3" class="less-more">less More</label>
+
+        <label style="margin:0 auto;" for="read-more-checkbox3" class="read-more">Read More</label>
+    </section>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/cart2.js"></script>
+    <script src="~/Scripts/readMore.js"></script>
+
+
+</body>
+</html>

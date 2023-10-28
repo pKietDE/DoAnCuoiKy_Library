@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/MasterLayout3.css" rel="stylesheet">
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+    <header>
+        <div class="box">
+            <div class="logo">
+                <img src="https://png.pngtree.com/element_origin_min_pic/17/04/10/8f0d1ecca24308cc22591a44987dd05c.jpg" alt="" />
+                <p>HUFLITER PUBLIC LIBRARY</p>
+            </div>
+            <div class="menu">
+                <ul>
+                    @if (@ViewBag.active == 1)
+                    {
+                        <li class="menu-item active"><a style="text-decoration: none; color: black;" href="~/Home/TrangChu">Home</a></li>
+
+                    }
+                    else
+                    {
+                        <li class="menu-item"><a style="text-decoration: none; color: black;" href="~/Home/TrangChu">Home</a></li>
+
+                    }
+                    @if (@ViewBag.active == 2)
+                    {
+                        <li class="menu-item active"><a style="text-decoration: none; color: black;" href="~/Home/ThongTinCaNhan">Info</a></li>
+
+                    }
+                    else
+                    {
+                        <li class="menu-item"><a style="text-decoration: none; color: black;" href="~/Home/ThongTinCaNhan">Info</a></li>
+
+                    }
+                    @if (@ViewBag.active == 3)
+                    {
+                        <li class="menu-item active"><a style="text-decoration:none; color:black;" href="~/Home/Contact">Contact</a></li>
+
+                    }
+                    else
+                    {
+                        <li class="menu-item"><a style="text-decoration:none; color:black;" href="~/Home/Contact">Contact</a></li>
+
+                    }
+                    @if (@ViewBag.active == 4)
+                    {
+                        <li class="menu-item active"><a style="text-decoration:none; color:black;" href="~/Home/Shop">Shop</a></li>
+
+                    }
+                    else
+                    {
+                        <li class="menu-item"><a style="text-decoration:none; color:black;" href="~/Home/Shop">Shop</a></li>
+
+                    }
+
+                </ul>
+            </div>
+            <div class="shop">
+                <div class="header__search float-start ">
+                    <input class="header__search--input" type="text" name="" id="" value="" />
+                    <button class="btn btn-dark header__search--btn"><ion-icon name="search-outline"></ion-icon></button>
+                </div>
+                <div class="btn btn-toolbar btn-outline-dark">
+                    <a href="~/User/Login" class="shop--link">đăng nhập</a>
+                </div>
+
+                <div class="cart">
+                    <i class="fa-solid fa-cart-shopping fa-xl" style="cursor:pointer;" onclick="showhidecart()"></i>
+
+                    <span id="soluonghang"></span>
+                </div>
+            </div>
+
+        </div>
+        
+    </header>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <footer>
+        <div class="row">
+            <div class="boxcenter2">
+                <div class="boxfooter1  textcenter">
+                    <h4>FOLLOW US</h4>
+                    <div class="boxfooter-logo">
+                        <i class="fa-brands fa-facebook fa-xl" style="color: #0099;"></i>
+                        <i class="fa-brands fa-instagram fa-xl" style="color: palevioletred;"></i>
+                        <i class="fa-brands fa-twitter fa-xl" style="color: deepskyblue;"></i>
+                        <i class="fa-brands fa-telegram fa-xl" style="color: dodgerblue;"></i>
+                    </div>
+                </div>
+                <div class="boxfooter2 textcenter">
+                    <h4>HƯỚNG DẪN</h4>
+                    <div class="boxfooter2-tilte-center">
+                        <div class="address mrb10">
+                            <a href="#">Điều Khoản</a>
+                        </div>
+                        <div class="address mrb10">
+                            <a href="#">Bảo mật</a>
+                        </div>
+                        <div class="address mrb10">
+                            <a href="#">Hỗ trợ và tư vấn</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="boxfooter3 textcenter">
+                    <h4>CONTACT US</h4>
+                    <div class="address mrb10">
+                        <b>Cơ sở Sư Vạn Hạnh</b> : Số 828 Sư Vạn Hạnh, Phường 13, Quận 10
+                    </div>
+                    <div class="address mrb10">
+                        <b>Cơ sở Thất Sơn</b> : Số M4-M7-M9 Thất Sơn, Phường 15, Quận 10
+                    </div>
+                    <div class="address mrb10">
+                        <b>Cơ sở Cao Thắng</b> :  Số 298-304 Cao Thắng, Phường 12, Quận 10
+                    </div>
+                    <div class="address mrb10">
+                        <b>Cơ sở Trường Sơn</b> :   Số 32 Trường Sơn, Phường 2, Tân Bình
+                    </div>
+                    <div class="address mrb10">
+                        <b>Cơ sở Hóc Môn</b> : Quốc lộ 22, xã Tân Xuân, huyện Hóc Môn.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row  colorc" style="justify-content:center;">
+            Thanks Very Much See You Again.
+        </div>
+    </footer>
+</body>
+</html>

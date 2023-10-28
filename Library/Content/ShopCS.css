@@ -1,0 +1,218 @@
+﻿body {
+    margin-top:100px;
+}
+section {
+    padding-top:10px;
+    border-bottom:1px solid #CCC;
+    margin-top: 30px;
+}
+
+.support {
+    display: inline-block;
+}
+
+.bg-ccc {
+    background-color: #ededed;
+}
+
+.bg-d8 {
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 5px rgba(0,0,0,0.5);
+}
+
+.container-fluid .title {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 10px 20px 0px 20px;
+    background-color: #CCC;
+    border-radius: 10px;
+}
+
+.image img {
+    width: 50%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.image {
+    display: flex;
+}
+
+    .image .content {
+        padding-left: 10px;
+    }
+
+        .image .content h5 {
+            padding: 20px;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        .image .content span {
+        }
+
+.mrr10 {
+    margin-right: 10px;
+}
+section .list-grid{
+    width:1300px;
+    margin:20px auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+}
+section .list-grid .item{
+    border:1px solid #CCC;
+    border-radius:10px;
+
+}
+    section .list-grid .item img {
+        width: 100%;
+        max-height:200px;
+        object-fit: cover;
+    }
+    section .list-grid .item a {
+       text-decoration:none;
+       font-weight:bold;
+       font-size:20px;
+       word-spacing:2px;
+       margin-bottom:20px;
+    }
+
+    section .list-grid .item p {
+        margin:15px 0px;
+        padding-bottom:10px;
+        color: #ffad33;
+        border-bottom:1px solid #CCC;
+        font-size:19px;
+    }
+.item{
+    background-color:antiquewhite;
+}
+
+section .item  input{
+    margin-left:2px;
+    margin-bottom:10px;
+    border-radius:5px;
+    width:50%;
+}
+    section .item button {
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+.showgiohang{
+    position:absolute;  
+    z-index:1;
+    top:130px;
+    right:300px;
+    background-color:navajowhite;
+
+}
+.showgiohang table tr td{
+}
+section .grid-4{
+    width:1300px;
+    margin:0px auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+
+}
+
+.content {
+    height: 380px;
+    overflow: hidden;
+    left: 0;
+    position: relative;
+    width: 1300px;
+    background-color: white;
+    transition: max-height 0.5s;
+}
+/*Checkbox1*/
+
+
+#read-more-checkbox{
+    display:none;
+}
+.read-more {
+    display: none; /* Ẩn nút "Read More" ban đầu */
+}
+
+#read-more-checkbox:checked ~ .content {
+    height: auto; /* Khi ô checkbox được chọn, hiển thị toàn bộ nội dung */
+}
+
+    #read-more-checkbox:checked ~ .content ~ .read-more {
+        display: none; /* Ẩn nút "Read More" khi đã mở toàn bộ nội dung */
+    }
+    
+
+#read-more-checkbox:not(:checked) ~ .read-more {
+    display: block; /* Hiển thị nút "Read More" khi chưa mở toàn bộ nội dung */
+}
+#read-more-checkbox:not(:checked) ~ .less-more {
+    display: none; /* Hiển thị nút "Read More" khi chưa mở toàn bộ nội dung */
+}
+label{
+    color:blue;
+    text-align:center;
+    margin:5px;
+}
+
+/*Checkbox2*/
+
+#read-more-checkbox2 {
+    display: none;
+}
+
+.read-more {
+    display: none; /* Ẩn nút "Read More" ban đầu */
+}
+
+#read-more-checkbox2:checked ~ .content {
+    height: auto; /* Khi ô checkbox được chọn, hiển thị toàn bộ nội dung */
+}
+
+    #read-more-checkbox2:checked ~ .content ~ .read-more {
+        display: none; /* Ẩn nút "Read More" khi đã mở toàn bộ nội dung */
+    }
+
+
+#read-more-checkbox2:not(:checked) ~ .read-more {
+    display: block; /* Hiển thị nút "Read More" khi chưa mở toàn bộ nội dung */
+}
+
+#read-more-checkbox2:not(:checked) ~ .less-more {
+    display: none; /* Hiển thị nút "Read More" khi chưa mở toàn bộ nội dung */
+}
+
+/*Checkbox3*/
+#read-more-checkbox3 {
+    display: none;
+}
+
+.read-more {
+    display: none; /* Ẩn nút "Read More" ban đầu */
+}
+
+#read-more-checkbox3:checked ~ .content {
+    height: auto; /* Khi ô checkbox được chọn, hiển thị toàn bộ nội dung */
+}
+
+    #read-more-checkbox3:checked ~ .content ~ .read-more {
+        display: none; /* Ẩn nút "Read More" khi đã mở toàn bộ nội dung */
+    }
+
+
+#read-more-checkbox3:not(:checked) ~ .read-more {
+    display: block; /* Hiển thị nút "Read More" khi chưa mở toàn bộ nội dung */
+}
+
+#read-more-checkbox3:not(:checked) ~ .less-more {
+    display: none; /* Hiển thị nút "Read More" khi chưa mở toàn bộ nội dung */
+}
+

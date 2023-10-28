@@ -1,0 +1,348 @@
+﻿@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.active = 1;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Trang Chủ</title>
+    <link href="~/Content/Trangchu1.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="slider">
+        <div class="list">
+            <div class="item">
+                <img src="~/image/pexels-photo-14083751.jpeg" />
+                @*Content*@
+                <div class="content">
+                    <a href="~/BookInformation/TrangChinh">
+                        <p class="color-animate">#News</p>
+                        <h3>Các bài báo <b><span>HOT</span></b></h3>
+                        <div class="next">></div>
+                    </a>
+
+
+                </div>
+            </div>
+            <div class="item">
+                <img src="~/image/pexels-photo-374918.jpeg" />
+                @*Content*@
+                <div class="content2">
+                    <a href="#">
+                        <p class="color-animate">#Math</p>
+                        <h3>Hiện tại có tới 20 cuốn sách về toán</h3>
+                        <div class="next">></div>
+                    </a>
+
+
+                </div>
+
+            </div>
+            <div class="item">
+                <img src="~/image/pexels-photo-7055937.jpeg" />
+                @*Content*@
+                <div class="content3">
+                    <a href="#">
+                        <p class="color-animate">#Pet</p>
+                        <h3>Hiện tại có tới 20 cuốn sách về Pet</h3>
+                        <div class="next">></div>
+                    </a>
+
+
+                </div>
+
+            </div>
+            <div class="item">
+                <img src="~/image/pexels-photo-3457273.jpeg" />
+                @*Content*@
+                <div class="content4">
+                    <a href="#">
+                        <p class="color-animate">#Children</p>
+                        <h3> những cuốn cuốn sách liên quan tới trẻ em</h3>
+                        <div class="next">></div>
+                    </a>
+
+
+                </div>
+
+            </div>
+            <div class="item">
+                <img src="~/image/camera-1130731_640.jpg" />
+                @*Content*@
+                <div class="content5">
+                    <a href="#">
+                        <p class="color-animate">#Travel</p>
+                        <h3>Hiện tại có những cuốn sách liên quan đến du lịch</h3>
+                        <div class="next">></div>
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        @*Button prev and next*@
+        <div class="button">
+            <button id="prev"><</button>
+            <button id="next">></button>
+
+        </div>
+        @*Dots*@
+        <ul class="dots">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+
+        </ul>
+
+    </div>
+    <section style="min-height:230vh;">
+        <div class="title">
+            <h4>All Posts</h4>
+
+        </div>
+        <hr  style="padding:0px;margin:0px 0px 10px 0px;"/>
+        <div class="container" style="width:1300px;">
+            <div class="row">
+                <div class="col-md-6 ">
+                    <div class="card" style="height:auto;">
+                        <img src="https://static.wixstatic.com/media/ad420a_1f0de414af0e48808a067779e92736ed~mv2.jpg/v1/fill/w_454,h_681,fp_0.50_0.50,q_90,enc_auto/ad420a_1f0de414af0e48808a067779e92736ed~mv2.jpg" />
+                        <div class="logo">
+                            <div class="logo-img">
+                                <img src="https://tse2.mm.bing.net/th?id=OIP.nJ1p10eqhU_ty886dt6uXQHaHY&pid=Api&P=0&h=180" />
+                            </div>
+                            <div class="logo-content">
+                                <h5>Admin</h5>
+                                <p>Mar 22</p>
+                            </div>
+
+                        </div>
+                        <a href="#">
+                            <h4>How Reading Changes your perspective</h4>
+
+                        </a>
+                        <p>Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading</p>
+                        <hr />
+                        <div class="sub">
+                            <div class="sub-comment">
+                                <div class="sub-comment-pro">
+                                    <p><span>0</span> View</p>
+                                    <p><span>0</span> Comments</p>
+                                </div>
+
+                                <p><span>1</span>Like</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card" style="height:auto;">
+                        <img src="https://static.wixstatic.com/media/84770f_d9b23fce65354d53a8866f9b8da0dcf1~mv2.jpg/v1/fill/w_454,h_666,fp_0.50_0.50,q_90,enc_auto/84770f_d9b23fce65354d53a8866f9b8da0dcf1~mv2.jpg" />
+                        <div class="logo">
+                            <div class="logo-img">
+                                <img src="https://tse2.mm.bing.net/th?id=OIP.nJ1p10eqhU_ty886dt6uXQHaHY&pid=Api&P=0&h=180" />
+                            </div>
+                            <div class="logo-content">
+                                <h5>Admin</h5>
+                                <p>Mar 22</p>
+                            </div>
+
+                        </div>
+                        <a href="#">
+                            <h4>The Art Of Writing</h4>
+
+                        </a>
+                        <p>Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....</p>
+                        <hr />
+                        <div class="sub">
+                            <div class="sub-comment">
+                                <div class="sub-comment-pro">
+                                    <p><span>0</span> View</p>
+                                    <p><span>0</span> Comments</p>
+                                </div>
+
+                                <p><span>1</span>Like</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 ">
+                    <div class="card" style="height:auto;">
+                        <img src="https://static.wixstatic.com/media/84770f_453c55f05b8c451fa0455d6c792666bd~mv2.jpg/v1/fill/w_454,h_569,fp_0.50_0.50,q_90,enc_auto/84770f_453c55f05b8c451fa0455d6c792666bd~mv2.jpg" />
+                        <div class="logo">
+                            <div class="logo-img">
+                                <img src="https://tse2.mm.bing.net/th?id=OIP.nJ1p10eqhU_ty886dt6uXQHaHY&pid=Api&P=0&h=180" />
+                            </div>
+                            <div class="logo-content">
+                                <h5>Admin</h5>
+                                <p>Mar 22</p>
+                            </div>
+
+                        </div>
+                        <a href="#">
+                            <h4>You want your child to read these books</h4>
+
+                        </a>
+                        <p>Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....</p>
+                        <hr />
+                        <div class="sub">
+                            <div class="sub-comment">
+                                <div class="sub-comment-pro">
+                                    <p><span>0</span> View</p>
+                                    <p><span>0</span> Comments</p>
+                                </div>
+
+                                <p><span>1</span>Like</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card" style="height:auto;">
+                        <img src="https://static.wixstatic.com/media/ad420a_b81dce182a684673a08d4c1a529845b2~mv2.jpg/v1/fill/w_454,h_681,fp_0.50_0.50,q_90,enc_auto/ad420a_b81dce182a684673a08d4c1a529845b2~mv2.jpg" />
+                        <div class="logo">
+                            <div class="logo-img">
+                                <img src="https://tse2.mm.bing.net/th?id=OIP.nJ1p10eqhU_ty886dt6uXQHaHY&pid=Api&P=0&h=180" />
+                            </div>
+                            <div class="logo-content">
+                                <h5>Admin</h5>
+                                <p>Mar 22</p>
+                            </div>
+
+                        </div>
+                        <a href="#">
+                            <h4>"The Traitor's Daughter"</h4>
+
+                        </a>
+                        <p>Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....</p>
+                        <hr />
+                        <div class="sub">
+                            <div class="sub-comment">
+                                <div class="sub-comment-pro">
+                                    <p><span>0</span> View</p>
+                                    <p><span>0</span> Comments</p>
+                                </div>
+
+                                <p><span>1</span>Like</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 ">
+                    <div class="card" style="height:auto;">
+                        <img src="https://static.wixstatic.com/media/84770f_c32940b6202c4d96a182a0d57868e04e~mv2.jpg/v1/fill/w_454,h_681,fp_0.50_0.50,q_90,enc_auto/84770f_c32940b6202c4d96a182a0d57868e04e~mv2.jpg" />
+                        <div class="logo">
+                            <div class="logo-img">
+                                <img src="https://tse2.mm.bing.net/th?id=OIP.nJ1p10eqhU_ty886dt6uXQHaHY&pid=Api&P=0&h=180" />
+                            </div>
+                            <div class="logo-content">
+                                <h5>Admin</h5>
+                                <p>Mar 22</p>
+                            </div>
+
+                        </div>
+                        <a href="#">
+                            <h4>8 must-read books</h4>
+
+                        </a>
+                        <p>Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....</p>
+                        <hr />
+                        <div class="sub">
+                            <div class="sub-comment">
+                                <div class="sub-comment-pro">
+                                    <p><span>0</span> View</p>
+                                    <p><span>0</span> Comments</p>
+                                </div>
+
+                                <p><span>1</span>Like</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card" style="height:auto;">
+                        <img src="https://static.wixstatic.com/media/84770f_dd1192028d8842c789ebfa9bdaa66937~mv2.jpg/v1/fill/w_454,h_301,fp_0.50_0.50,q_90,enc_auto/84770f_dd1192028d8842c789ebfa9bdaa66937~mv2.jpg" />
+                        <div class="logo">
+                            <div class="logo-img">
+                                <img src="https://tse2.mm.bing.net/th?id=OIP.nJ1p10eqhU_ty886dt6uXQHaHY&pid=Api&P=0&h=180" />
+                            </div>
+                            <div class="logo-content">
+                                <h5>Admin</h5>
+                                <p>Mar 22</p>
+                            </div>
+
+                        </div>
+                        <a href="#">
+                            <h4>My new digital reading habits</h4>
+
+                        </a>
+                        <p>Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....</p>
+                        <hr />
+                        <div class="sub">
+                            <div class="sub-comment">
+                                <div class="sub-comment-pro">
+                                    <p><span>0</span> View</p>
+                                    <p><span>0</span> Comments</p>
+                                </div>
+
+                                <p><span>1</span>Like</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container" style="min-height:150vh;width:1000px;">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="flexcenter">
+                        <h3>Books</h3>
+                    </div>
+                    <hr style="width:10%; margin-left:430px; color:darkgoldenrod;" />
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 images">
+                    <img class="borderbottom" src="https://static.wixstatic.com/media/08fe21_39df86636bf74b87939d45a22da1ff5d.jpg/v1/fill/w_220,h_335,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/08fe21_39df86636bf74b87939d45a22da1ff5d.jpg" />
+                    <div class="Buynow">
+                        <a class="btn btn-outline-dark">Buy Now</a>
+
+                    </div>
+                </div>
+                <div class="col-md-4 images">
+                    <img class="borderbottom" src="https://static.wixstatic.com/media/08fe21_42c532e430c449b7a6742500cb4b6060.jpg/v1/fill/w_220,h_335,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/08fe21_42c532e430c449b7a6742500cb4b6060.jpg" />
+                    <div class="Buynow">
+                        <a class="btn btn-outline-dark">Buy Now</a>
+
+                    </div>
+                </div>
+                <div class="col-md-4 images">
+                    <img class="borderbottom" src="https://static.wixstatic.com/media/08fe21_5d92a65322494e2db8a2c246a5aaad23.jpg/v1/fill/w_220,h_335,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/08fe21_5d92a65322494e2db8a2c246a5aaad23.jpg" />
+                    <div class="Buynow">
+                        <a class="btn btn-outline-dark">Buy Now</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+    
+    <script src="~/Scripts/SliderJS2.js"></script>
+</body>
+</html>

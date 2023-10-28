@@ -1,0 +1,75 @@
+﻿@model List<Library.Models.LoginModel>
+
+@{
+    ViewBag.Title = "Đăng Nhập";
+    Layout = null;
+    <style>
+        .bg1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 80vh;
+        }
+        .content-login{
+            border-radius:15px;
+            padding:30px;
+            background-color:#ccc;
+        }
+        input{
+            padding:10px;
+            margin-bottom:20px;
+            border-radius:5px;
+        }
+        .mrgb10{
+            margin-bottom:10px;
+        }
+    </style>
+}
+
+<div class="content bg1">
+    
+        <p>Tài Khoản : @UserName</p>
+        <p>Mật Khẩu : @item.Password</p>
+    
+    <div class="content-login">
+        @using (Html.BeginForm("Login", "User", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Đăng Nhập</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="control-label col-md-2 mrgb10">Tên Đăng Nhập</div>
+                    <div class="col-md-10">
+                        <input name="UserName" value="" placeholder="Nhập Mật Khẩu" />
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="control-label col-md-2 mrgb10">Mật Khẩu</div>
+                    <div class="col-md-10">
+                        <input name="Password" value="" placeholder="Nhập Mật Khẩu" />
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Đăng Nhập" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

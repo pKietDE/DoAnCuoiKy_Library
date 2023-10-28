@@ -1,0 +1,116 @@
+﻿body {
+}
+section .card{
+    width:100%;
+    height:200px;
+    border-radius:10px;
+    border:1px solid #CCC;
+}
+section .card img{
+    width:100%;
+    max-height:450px;
+    object-fit:cover;
+}
+section .logo {
+    display: flex;
+    padding-top:20px;
+    padding-left:20px;
+}
+section .logo img{
+    width:40px;
+    height:35px;
+    border-radius:50%;
+    flex-shrink:0;
+}
+section .logo-content{
+    margin-left:10px;
+}
+section .logo-content p{
+    padding:0px;
+}
+    section .logo-content h5 {
+        
+        padding: 0px;
+        margin: 0px;
+    }
+section .card h4 {
+    padding-left: 10px;
+}
+section .card p {
+    padding-left: 10px;
+    margin: 0px;
+    cursor: pointer;
+}
+section .card a {
+    text-decoration:none;
+    color:black;
+    cursor:pointer;
+}
+section .card:hover  a{
+    color:burlywood;
+}
+section .sub-comment {
+    display: flex;
+    justify-content:space-between
+}
+section .sub-comment-pro {
+    display: flex;
+    margin-bottom:5px;
+}
+
+section .sub-comment p{
+    padding-right:20px;
+}
+.flexcenter{
+    display:flex;
+    justify-content:center;
+    padding:0;
+    margin-top:20px;
+}
+.borderbottom {
+    border-bottom: 2px solid darkgoldenrod;
+    padding-bottom:10px;
+}
+.images:hover img{
+    opacity:0.6;
+    cursor:pointer;
+}
+.images img{
+    width:100%;
+    object-fit:cover;
+}
+.images .Buynow {
+    margin-top:20px;
+    display: flex;
+    justify-content: center;
+}
+.images .Buynow button{
+    border-radius:4px;
+    width:80px;
+    height:40px;
+    background-color:white;
+    border:1px solid black;
+    color:#CCC;
+}
+    .images .Buynow button:hover {
+       
+        background-color: black;
+        border: 1px solid black;
+        color: white;
+    }
+    section h4{
+        font-weight:bold;
+        margin:0px;
+        padding:10px;
+        color:white
+    }
+    section .title {
+        display:inline-block;
+        background-color:#000;
+        color:black;
+        margin-left:10px;
+        padding:0;
+    }
+    section{
+        margin-top:30px;
+    }
